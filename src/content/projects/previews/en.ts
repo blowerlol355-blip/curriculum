@@ -1,47 +1,33 @@
-import thumbnailCubeWar from "../../../assets/thumbnails/cubewar.webp";
-import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
-//import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
-import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
-import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
-import thumbnailStreakon from "../../../assets/thumbnails/streakon.webp";
+import thumbnailAutomation from "../../../assets/thumbnails/automation.png";
+import thumbnailDashboard from "../../../assets/thumbnails/dashboard.png";
+import thumbnailWebPage from "../../../assets/thumbnails/webpage.png";
+import thumbnailWebApp from "../../../assets/thumbnails/webapp.png";
 
 import type { ProjectPreview } from "../../types";
 
 export default [
   {
-    title: "StreakOn",
-    slug: "streakon",
-    thumbnail: thumbnailStreakon,
-    description: "Social habit tracking app",
+    title: "Automatizaciones",
+    slug: "automation",
+    thumbnail: thumbnailAutomation,
+    description: "Sistemas inteligentes de control y automatización de procesos",
   },
   {
-    title: "CubeWar",
-    slug: "cubewar",
-    thumbnail: thumbnailCubeWar,
-    description: "Multiplayer strategy game",
+    title: "Dashboard Analítico",
+    slug: "dashboard",
+    thumbnail: thumbnailDashboard,
+    description: "Panel de control y visualización de datos en tiempo real",
   },
   {
-    title: "Quibbo",
-    slug: "quibbo",
-    thumbnail: thumbnailQuibbo,
-    description: "Multiplayer gaming platform",
+    title: "Páginas Web",
+    slug: "webpage",
+    thumbnail: thumbnailWebPage,
+    description: "Sitios web modernos y landing pages con diseño premium",
   },
   {
-    title: "Sharkie",
-    slug: "sharkie",
-    thumbnail: thumbnailSharkie,
-    description: "2D adventure game",
-  },
-  /**  {
-    title: "WebGL Particles",
-    slug: "particles",
-    thumbnail: thumbnailParticles,
-    description: "Dynamic 3D particles",
-  }, */
-  {
-    title: "Pokédex",
-    slug: "pokedex",
-    thumbnail: thumbnailPokedex,
-    description: "Open-source learning project",
+    title: "Aplicaciones Web",
+    slug: "webapp",
+    thumbnail: thumbnailWebApp,
+    description: "Aplicaciones SaaS y herramientas interactivas a medida",
   },
 ] as const satisfies ProjectPreview[];

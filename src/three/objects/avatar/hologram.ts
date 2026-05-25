@@ -80,6 +80,11 @@ const setupMesh = () => {
   mesh.frustumCulled = false;
   mesh.renderOrder = 23;
 
+  const headBone = mesh.getObjectByName("headBone");
+  if (headBone) {
+    // glasses removed
+  }
+
   avatar.transform.add(transform);
   transform.add(mesh);
 };

@@ -6,7 +6,6 @@ import { t } from "../i18n/utils/translate";
 import { useHeaderTheme } from "../composables/useHeaderTheme";
 import { lenis } from "../composables/useScroll";
 import { projectId } from "../composables/useRouteObserver";
-import { social } from "../content/social";
 import ButtonRound from "./ButtonRound.vue";
 import ArrowRight from "./icons/ArrowRight.vue";
 import SoundsToggle from "./SoundsToggle.vue";
@@ -63,6 +62,28 @@ const getInTouchClassNames = computed(() => {
     "header-get-in-touch-isProjectPage": projectId.value !== null,
   };
 });
+
+const handleContactClick = (event: MouseEvent) => {
+  event.preventDefault();
+  if (projectId.value !== null) {
+    router.push("/");
+    setTimeout(() => {
+      if (lenis.value) {
+        lenis.value.scrollTo("#contact", { immediate: true });
+      } else {
+        const el = document.getElementById("contact");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
+  } else {
+    if (lenis.value) {
+      lenis.value.scrollTo("#contact");
+    } else {
+      const el = document.getElementById("contact");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+};
 </script>
 
 <template>
@@ -97,11 +118,10 @@ const getInTouchClassNames = computed(() => {
     </div>
     <div class="header-right">
       <Button
-        renderAs="a"
+        renderAs="button"
         variant="accent"
         :aria-label="t('get-in-touch')"
-        :href="social.find((item) => item.name === 'mail')?.url ?? ''"
-        external
+        @click="handleContactClick"
         :class="getInTouchClassNames"
         data-cursor="circle-white"
         data-hoversound="hover"

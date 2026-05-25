@@ -3,6 +3,7 @@
 varying vec2 vUv;
 uniform sampler2D uTexture;
 uniform float uFrame;
+uniform vec3 uSkinColor;
 
 #define ROWS 4.
 #define COLUMNS 4.
@@ -24,5 +25,5 @@ void main() {
 
   float progress = getProgress();
 
-  gl_FragColor = vec4(textureColor.rgb, progress * textureColor.a);
+  gl_FragColor = vec4(textureColor.rgb * uSkinColor, progress * textureColor.a);
 }

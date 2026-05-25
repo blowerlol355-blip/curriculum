@@ -12,7 +12,23 @@ export type TagVariant =
   | "kubernetes"
   | "postgresql"
   | "ogl"
-  | "glsl";
+  | "glsl"
+  | "iot"
+  | "arduino"
+  | "node-red"
+  | "mqtt"
+  | "home-assistant"
+  | "typescript"
+  | "tailwind"
+  | "chartjs"
+  | "dashboard"
+  | "vue"
+  | "nuxt"
+  | "pinia"
+  | "firebase"
+  | "ai-api"
+  | "animations"
+  | "seo";
 
 export const tagLabels = {
   three: "Three.js",
@@ -29,4 +45,20 @@ export const tagLabels = {
   postgresql: "PostgreSQL",
   ogl: "OGL.js",
   glsl: "GLSL",
+  iot: "IoT",
+  arduino: "Arduino",
+  "node-red": "Node-RED",
+  mqtt: "MQTT",
+  "home-assistant": "Home Assistant",
+  typescript: "TypeScript",
+  tailwind: "Tailwind CSS",
+  chartjs: "Chart.js",
+  dashboard: "Dashboard",
+  vue: "Vue.js",
+  nuxt: "Nuxt.js",
+  pinia: "Pinia",
+  firebase: "Firebase",
+  "ai-api": "AI API",
+  animations: "Animations",
+  seo: "SEO",
 } as const satisfies Record<TagVariant, string>;
