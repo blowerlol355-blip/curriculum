@@ -112,6 +112,9 @@ const SERVICES_EN = [
   { name: "SQL Server & MySQL" },
   { name: "Blazor & MAUI" },
   { name: "Microservices & Automatizaciones" },
+  { name: "Python, PHP & HTML" },
+  { name: "Next.js & React Native" },
+  { name: "SQL, XAMPP & n8n" },
 ] as const satisfies { name: string }[];
 
 const SERVICES_DE = [
@@ -120,6 +123,9 @@ const SERVICES_DE = [
   { name: "SQL Server & MySQL" },
   { name: "Blazor & MAUI" },
   { name: "Mikrodienste & Automatizaciones" },
+  { name: "Python, PHP & HTML" },
+  { name: "Next.js & React Native" },
+  { name: "SQL, XAMPP & n8n" },
 ] as const satisfies { name: string }[];
 
 const services = computed(() => {

@@ -2,6 +2,10 @@ import thumbnailAutomation from "../../../assets/thumbnails/automation.png";
 import thumbnailDashboard from "../../../assets/thumbnails/dashboard.png";
 import thumbnailWebPage from "../../../assets/thumbnails/webpage.png";
 import thumbnailWebApp from "../../../assets/thumbnails/webapp.png";
+import thumbnailRareBloat from "../../../assets/thumbnails/rarebloat.png";
+import thumbnailChaguacars from "../../../assets/thumbnails/chaguacars.png";
+import thumbnailFinDocs from "../../../assets/thumbnails/findocs.png";
+import thumbnailStockPilot from "../../../assets/thumbnails/stockpilot.png";
 
 import type { ProjectPreview } from "../../types";
 
@@ -29,5 +33,29 @@ export default [
     slug: "webapp",
     thumbnail: thumbnailWebApp,
     description: "SaaS-Anwendungen und maßgeschneiderte interaktive Webtools",
+  },
+  {
+    title: "RareBloat Labs",
+    slug: "rarebloat",
+    thumbnail: thumbnailRareBloat,
+    description: "Professionelles Projekt: Website einer Digitalagentur für Entwicklung und Automatisierung",
+  },
+  {
+    title: "Chaguacars Express",
+    slug: "chaguacars",
+    thumbnail: thumbnailChaguacars,
+    description: "Professionelles Projekt: Website für eine Automatikgetriebe-Werkstatt",
+  },
+  {
+    title: "FinDocs AI",
+    slug: "findocs",
+    thumbnail: thumbnailFinDocs,
+    description: "Persönliches Projekt: Finanzdokumente mit KI und RAG abfragen",
+  },
+  {
+    title: "StockPilot",
+    slug: "stockpilot",
+    thumbnail: thumbnailStockPilot,
+    description: "Persönliches Projekt: Lagerverwaltungssystem für KMU",
   },
 ] as const satisfies ProjectPreview[];

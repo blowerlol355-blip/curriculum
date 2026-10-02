@@ -28,7 +28,19 @@ export type TagVariant =
   | "firebase"
   | "ai-api"
   | "animations"
-  | "seo";
+  | "seo"
+  | "supabase"
+  | "prisma"
+  | "n8n"
+  | "gsap"
+  | "stripe"
+  | "python"
+  | "fastapi"
+  | "rag"
+  | "gemini"
+  | "pgvector"
+  | "responsive"
+  | "whatsapp";
 
 export const tagLabels = {
   three: "Three.js",
@@ -61,4 +73,16 @@ export const tagLabels = {
   "ai-api": "AI API",
   animations: "Animations",
   seo: "SEO",
+  supabase: "Supabase",
+  prisma: "Prisma",
+  n8n: "n8n",
+  gsap: "GSAP",
+  stripe: "Stripe",
+  python: "Python",
+  fastapi: "FastAPI",
+  rag: "RAG",
+  gemini: "Gemini AI",
+  pgvector: "pgvector",
+  responsive: "Responsive",
+  whatsapp: "WhatsApp",
 } as const satisfies Record<TagVariant, string>;
