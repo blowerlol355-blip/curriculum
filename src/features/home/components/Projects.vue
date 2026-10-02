@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import { previews } from "../../../content/projects/previews";
 import { locale } from "../../../i18n/store";
 import PreviewCard from "../../projects/components/PreviewCard.vue";
@@ -25,6 +25,14 @@ const loadPreviews = async () => {
   emit("loaded", module.default);
 };
 
+const groups = computed(() => {
+  const all = loadedPreviews.value ?? [];
+  return [
+    { key: "what-i-do", previews: all.filter((p) => p.category !== "project") },
+    { key: "my-projects", previews: all.filter((p) => p.category === "project") },
+  ].filter((group) => group.previews.length > 0);
+});
+
 watch(locale, loadPreviews);
 
 onMounted(loadPreviews);
@@ -40,10 +48,11 @@ onMounted(loadPreviews);
         <h2 class="projects-title-copy">{{ t("projects") }}</h2>
       </div>
     </div>
-    <div class="grid">
+    <div v-for="(group, groupIndex) in groups" :key="group.key" class="grid projects-group">
+      <h3 class="projects-group-title">{{ t(group.key) }}</h3>
       <div class="projects-cards">
-        <PreviewCard v-for="preview in loadedPreviews" :key="preview.title" :preview="preview" />
-        <PreviewCard v-if="isFeatureEnabled('startProject')" />
+        <PreviewCard v-for="preview in group.previews" :key="preview.title" :preview="preview" />
+        <PreviewCard v-if="groupIndex === groups.length - 1 && isFeatureEnabled('startProject')" />
       </div>
     </div>
   </div>
@@ -131,6 +140,21 @@ onMounted(loadPreviews);
       left: 0;
       color: var(--color-beige-600);
       --icon-color: var(--color-beige-600);
+    }
+  }
+
+  &-group {
+    row-gap: var(--space-lg);
+
+    &-title {
+      grid-column: 1 / 13;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      font-size: var(--font-size-title-sm);
+
+      @include mixins.mq("lg") {
+        grid-column: 3 / span 8;
+      }
     }
   }
 

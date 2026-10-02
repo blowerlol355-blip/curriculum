@@ -26,4 +26,5 @@ export interface ProjectPreview {
   slug: string;
   thumbnail: string;
   description: string;
+  category?: "service" | "project";
 }

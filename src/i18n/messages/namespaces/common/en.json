@@ -26,5 +26,7 @@
   "source-code": "Código Fuente",
   "switch-to-project": "Cambiar al proyecto {project}",
   "version": "Versión",
-  "view-project": "Ver proyecto"
+  "view-project": "Ver proyecto",
+  "what-i-do": "Lo que hago",
+  "my-projects": "Mis proyectos"
 }
